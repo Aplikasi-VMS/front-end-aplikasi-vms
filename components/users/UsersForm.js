@@ -30,8 +30,7 @@ export default function UserForm({ mode = 'create', user = {} }) {
             }
             setTimeout(handleSuccess, 500);
         } catch (error) {
-            console.error("Submit failed:", error);
-            setMessage("Gagal menyimpan user. Silakan coba lagi.");
+            setMessage(error.message || 'Gagal menyimpan User. Silakan coba lagi.');
         } finally {
             setLoading(false);
         }

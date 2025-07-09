@@ -50,8 +50,7 @@ export default function VisitorForm({ mode = 'create', visitor = {} }) {
 
       setTimeout(handleSuccess, 500);
     } catch (error) {
-      console.error("Submit failed:", error);
-      setMessage("Gagal menyimpan visitor. Silakan coba lagi.");
+       setMessage(error.message || 'Gagal menyimpan visitor. Silakan coba lagi.');
     } finally {
       setLoading(false);
     }
@@ -86,7 +85,7 @@ export default function VisitorForm({ mode = 'create', visitor = {} }) {
 
           <div>
             <label htmlFor="idcardNum" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Nomor ID Card
+              Nomor ID Card (Unik)
             </label>
             <input
               id="idcardNum"
@@ -118,7 +117,7 @@ export default function VisitorForm({ mode = 'create', visitor = {} }) {
 
           <div>
             <label htmlFor="passtime" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Pass Time (Optional)
+              Pass Time
             </label>
             <input
               id="passtime"
@@ -126,7 +125,7 @@ export default function VisitorForm({ mode = 'create', visitor = {} }) {
               className="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               value={passtime}
               onChange={(e) => setPassTime(e.target.value)}
-              placeholder="Masukkan passtime atau kosongkan"
+              placeholder="Contoh 09:00:00,11:00:00 "
             />
           </div>
 

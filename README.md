@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VMS Frontend
 
-## Getting Started
+Ini adalah frontend untuk aplikasi Visitor Management System (VMS) menggunakan Next.js 1 App Router dan Tailwind CSS, terhubung dengan backend Node.js + Express + Prisma.
 
-First, run the development server:
+## Fitur
+
+- Login multi-role: SUPERUSER, ADMIN, RECEPTIONIST
+- Dashboard dengan statistik dan grafik
+- CRUD Users
+- CRUD Devices
+- CRUD Visitors dengan integrasi Face Recognition
+- Responsive UI menggunakan Tailwind CSS
+- Animasi transisi dengan framer-motion
+- Dark mode
+
+
+## Instalasi
+### 1. Clone repository
+
+```bash
+git clone https://github.com/username/vms-frontend.git
+cd vms-frontend
+```
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Buat file environment variable
+Buat file .env.local di root project dan isi dengan:
+
+ini
+```bash
+NEXT_PUBLIC_API_URL=http://<backend_ip>:<port>/api
+JWT_SECRET=your_jwt_secret
+```
+Contoh:
+
+```bash
+NEXT_PUBLIC_API_URL=http://13.45.56.78:5000/api
+JWT_SECRET=your_secret
+```
+Pastikan JWT_SECRET sama dengan di backend.
+
+### 5. Jalankan project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Aplikasi akan berjalan di http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
+## Vercel
+### 1. Push project ke GitHub
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 2. Login ke Vercel dan import project dari GitHub
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Pada pengaturan environment variables di Vercel, tambahkan:
 
-## Learn More
+```bash
+NEXT_PUBLIC_API_URL=http://<backend_ip>:<port>/api
+JWT_SECRET=your_jwt_secret
+```
+Contoh:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+NEXT_PUBLIC_API_URL=http://13.45.56.78:5000/api
+JWT_SECRET=your_secret
+```
+### 3. Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel akan otomatis build dan deploy project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
+- npm run dev : Menjalankan server development Next.js
+- npm run build : Build aplikasi untuk production
+- npm start : Menjalankan aplikasi hasil build production
 
-## Deploy on Vercel
+## Catatan Tambahan
+- Pastikan backend sudah berjalan dan dapat diakses publik sebelum frontend dideploy.
+- Pastikan CORS backend mengizinkan origin dari domain frontend.
+- Jika mengalami error ECONNREFUSED, berarti backend belum terhubung atau environment variable salah.
+- Struktur project menggunakan Next.js App Router dan server actions ('use server').
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+Kontribusi sangat kami harapkan!
+Untuk perubahan besar, silakan buka issue terlebih dahulu untuk mendiskusikan apa yang ingin Anda ubah.
+
+---
+
+## Contact
+
+Untuk pertanyaan lebih lanjut, silakan hubungi: **ibnutopanit05@gmail.com**

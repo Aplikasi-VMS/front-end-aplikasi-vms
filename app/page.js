@@ -24,7 +24,7 @@ export default function HomePage() {
         <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out"></span>
         <span className="relative flex items-center gap-2">
           <FiLogIn />
-          Login Sekarang
+          Masuk
         </span>
       </Link>
 

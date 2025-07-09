@@ -30,8 +30,7 @@ export default function DeviceForm({ mode = 'create', device = {} }) {
       }
       setTimeout(handleSuccess, 500);
     } catch (error) {
-      console.error("Submit failed:", error);
-      setMessage("Gagal menyimpan perangkat. Silakan coba lagi.");
+      setMessage(error.message || 'Gagal menyimpan visitor. Silakan coba lagi.');
     } finally {
       setLoading(false);
     }
